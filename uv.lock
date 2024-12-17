@@ -265,6 +265,15 @@ wheels = [
 ]
 
 [[package]]
+name = "blinker"
+version = "1.9.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/21/28/9b3f50ce0e048515135495f198351908d99540d69bfdc8c1d15b73dc55ce/blinker-1.9.0.tar.gz", hash = "sha256:b4ce2265a7abece45e7cc896e98dbebe6cead56bcf805a3d23136d145f5445bf", size = 22460 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/10/cb/f2ad4230dc2eb1a74edf38f1a38b9b52277f75bef262d8908e60d957e13c/blinker-1.9.0-py3-none-any.whl", hash = "sha256:ba0efaa9080b619ff2f3459d1d500c57bddea4a6b424b60a91141db6fd2f08bc", size = 8458 },
+]
+
+[[package]]
 name = "build"
 version = "1.2.2.post1"
 source = { registry = "https://pypi.org/simple" }
@@ -451,7 +460,7 @@ wheels = [
 
 [[package]]
 name = "chromadb"
-version = "0.5.20"
+version = "0.5.23"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "bcrypt" },
@@ -483,9 +492,9 @@ dependencies = [
     { name = "typing-extensions" },
     { name = "uvicorn", extra = ["standard"] },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/03/31/6c8e05405bb02b4a1f71f9aa3eef242415565dabf6afc1bde7f64f726963/chromadb-0.5.20.tar.gz", hash = "sha256:19513a23b2d20059866216bfd80195d1d4a160ffba234b8899f5e80978160ca7", size = 33664540 }
+sdist = { url = "https://files.pythonhosted.org/packages/42/64/28daa773f784bcd18de944fe26ed301de844d6ee17188e26a9d6b4baf122/chromadb-0.5.23.tar.gz", hash = "sha256:360a12b9795c5a33cb1f839d14410ccbde662ef1accd36153b0ae22312edabd1", size = 33700455 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5f/7a/10bf5dc92d13cc03230190fcc5016a0b138d99e5b36b8b89ee0fe1680e10/chromadb-0.5.20-py3-none-any.whl", hash = "sha256:9550ba1b6dce911e35cac2568b301badf4b42f457b99a432bdeec2b6b9dd3680", size = 617884 },
+    { url = "https://files.pythonhosted.org/packages/92/8c/a9eb95a28e6c35a0122417976a9d435eeaceb53f596a8973e33b3dd4cfac/chromadb-0.5.23-py3-none-any.whl", hash = "sha256:ffe5bdd7276d12cb682df0d38a13aa37573e6a3678e71889ac45f539ae05ad7e", size = 628347 },
 ]
 
 [[package]]
@@ -544,18 +553,17 @@ wheels = [
 
 [[package]]
 name = "crewai"
-version = "0.83.0"
-source = { registry = "https://pypi.org/simple" }
+version = "0.86.0"
+source = { editable = "../../../Documents/Uplift Digital Solutions/clients/crewai-org/crewAI" }
 dependencies = [
     { name = "appdirs" },
     { name = "auth0-python" },
+    { name = "blinker" },
     { name = "chromadb" },
     { name = "click" },
-    { name = "crewai-tools" },
     { name = "instructor" },
     { name = "json-repair" },
     { name = "jsonref" },
-    { name = "langchain" },
     { name = "litellm" },
     { name = "openai" },
     { name = "openpyxl" },
@@ -571,14 +579,64 @@ dependencies = [
     { name = "tomli-w" },
     { name = "uv" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/40/66/7ecee1384178d77ce3f45787bb9b0b4cbef6795ebce00a6d9238ad01569b/crewai-0.83.0.tar.gz", hash = "sha256:d6f72af8ae91c931c3536a4df69c5b7d573cb7c85b8005caa857febb365b463f", size = 6455914 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/42/f2/3a55c375d5d106f19adfbedf271aa8a664ccf1ce7319506225d2a35108e1/crewai-0.83.0-py3-none-any.whl", hash = "sha256:918ff726267d66b8e05387e6e12af382088082190c7a03d215fc671d7e4784b6", size = 215366 },
-]
 
 [package.optional-dependencies]
 tools = [
     { name = "crewai-tools" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "agentops", marker = "extra == 'agentops'", specifier = ">=0.3.0" },
+    { name = "appdirs", specifier = ">=1.4.4" },
+    { name = "auth0-python", specifier = ">=4.7.1" },
+    { name = "blinker", specifier = ">=1.9.0" },
+    { name = "chromadb", specifier = ">=0.5.23" },
+    { name = "click", specifier = ">=8.1.7" },
+    { name = "crewai-tools", marker = "extra == 'tools'", specifier = ">=0.17.0" },
+    { name = "docling", marker = "extra == 'docling'", specifier = ">=2.12.0" },
+    { name = "fastembed", marker = "extra == 'fastembed'", specifier = ">=0.4.1" },
+    { name = "instructor", specifier = ">=1.3.3" },
+    { name = "json-repair", specifier = ">=0.25.2" },
+    { name = "jsonref", specifier = ">=1.1.0" },
+    { name = "litellm", specifier = ">=1.44.22" },
+    { name = "mem0ai", marker = "extra == 'mem0'", specifier = ">=0.1.29" },
+    { name = "openai", specifier = ">=1.13.3" },
+    { name = "openpyxl", specifier = ">=3.1.5" },
+    { name = "openpyxl", marker = "extra == 'openpyxl'", specifier = ">=3.1.5" },
+    { name = "opentelemetry-api", specifier = ">=1.22.0" },
+    { name = "opentelemetry-exporter-otlp-proto-http", specifier = ">=1.22.0" },
+    { name = "opentelemetry-sdk", specifier = ">=1.22.0" },
+    { name = "pandas", marker = "extra == 'pandas'", specifier = ">=2.2.3" },
+    { name = "pdfplumber", specifier = ">=0.11.4" },
+    { name = "pdfplumber", marker = "extra == 'pdfplumber'", specifier = ">=0.11.4" },
+    { name = "pydantic", specifier = ">=2.4.2" },
+    { name = "python-dotenv", specifier = ">=1.0.0" },
+    { name = "pyvis", specifier = ">=0.3.2" },
+    { name = "regex", specifier = ">=2024.9.11" },
+    { name = "tomli", specifier = ">=2.0.2" },
+    { name = "tomli-w", specifier = ">=1.1.0" },
+    { name = "uv", specifier = ">=0.4.25" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "cairosvg", specifier = ">=2.7.1" },
+    { name = "crewai-tools", specifier = ">=0.17.0" },
+    { name = "mkdocs", specifier = ">=1.4.3" },
+    { name = "mkdocs-material", specifier = ">=9.5.7" },
+    { name = "mkdocs-material-extensions", specifier = ">=1.3.1" },
+    { name = "mkdocstrings", specifier = ">=0.22.0" },
+    { name = "mkdocstrings-python", specifier = ">=1.1.2" },
+    { name = "mypy", specifier = ">=1.10.0" },
+    { name = "pillow", specifier = ">=10.2.0" },
+    { name = "pre-commit", specifier = ">=3.6.0" },
+    { name = "pytest", specifier = ">=8.0.0" },
+    { name = "pytest-asyncio", specifier = ">=0.23.7" },
+    { name = "pytest-subprocess", specifier = ">=1.5.2" },
+    { name = "pytest-vcr", specifier = ">=1.0.2" },
+    { name = "python-dotenv", specifier = ">=1.0.0" },
+    { name = "ruff", specifier = ">=0.8.2" },
 ]
 
 [[package]]
@@ -590,11 +648,11 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "crewai", extras = ["tools"], specifier = ">=0.83.0,<1.0.0" }]
+requires-dist = [{ name = "crewai", extras = ["tools"], editable = "../../../Documents/Uplift Digital Solutions/clients/crewai-org/crewAI" }]
 
 [[package]]
 name = "crewai-tools"
-version = "0.14.0"
+version = "0.17.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "beautifulsoup4" },
@@ -603,7 +661,6 @@ dependencies = [
     { name = "docx2txt" },
     { name = "embedchain" },
     { name = "lancedb" },
-    { name = "langchain" },
     { name = "openai" },
     { name = "pydantic" },
     { name = "pyright" },
@@ -612,9 +669,9 @@ dependencies = [
     { name = "requests" },
     { name = "selenium" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/9b/6d/4fa91b481b120f83bb58f365203d8aa8564e8ced1035d79f8aedb7d71e2f/crewai_tools-0.14.0.tar.gz", hash = "sha256:510f3a194bcda4fdae4314bd775521964b5f229ddbe451e5d9e0216cae57f4e3", size = 815892 }
+sdist = { url = "https://files.pythonhosted.org/packages/cc/15/365f74e0e8313e7a3399bf01d908aa73575c823275f9196ec14c23159878/crewai_tools-0.17.0.tar.gz", hash = "sha256:2a2986000775c76bad45b9f3a2be857d293cf5daffe5f316abc052e630b1e5ce", size = 818983 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c8/ed/9f4e64e1507062957b0118085332d38b621c1000874baef2d1c4069bfd97/crewai_tools-0.14.0-py3-none-any.whl", hash = "sha256:0a804a828c29869c3af3253f4fc4c3967a3f80f06dab22e9bbe9526608a31564", size = 462980 },
+    { url = "https://files.pythonhosted.org/packages/f4/1d/976adc2a4e5237cb03625de412cd051dea7d524084ed442adedfda871526/crewai_tools-0.17.0-py3-none-any.whl", hash = "sha256:85cf15286684ecad579b5a497888c6bf8a079ca443f7dd63a52bf1709655e4a3", size = 467975 },
 ]
 
 [[package]]

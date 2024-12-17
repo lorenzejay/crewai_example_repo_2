@@ -7,12 +7,14 @@ from crewai_example_repo_2.crew import CrewaiExampleRepo2Crew
 # Replace with inputs you want to test with, it will automatically
 # interpolate any tasks and agents information
 
+
 def run():
     """
     Run the crew.
     """
     inputs = {
-        'topic': 'AI LLMs'
+        # "question": "What is John's age and where does he live?"
+        "question": "What is the optimization problem formalized within the Agentic Workflow paper?"
     }
     CrewaiExampleRepo2Crew().crew().kickoff(inputs=inputs)
 
@@ -21,14 +23,15 @@ def train():
     """
     Train the crew for a given number of iterations.
     """
-    inputs = {
-        "topic": "AI LLMs"
-    }
+    inputs = {"topic": "AI LLMs"}
     try:
-        CrewaiExampleRepo2Crew().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
+        CrewaiExampleRepo2Crew().crew().train(
+            n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs
+        )
 
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
+
 
 def replay():
     """
@@ -40,15 +43,16 @@ def replay():
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
 
+
 def test():
     """
     Test the crew execution and returns the results.
     """
-    inputs = {
-        "topic": "AI LLMs"
-    }
+    inputs = {"topic": "AI LLMs"}
     try:
-        CrewaiExampleRepo2Crew().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
+        CrewaiExampleRepo2Crew().crew().test(
+            n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs
+        )
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")

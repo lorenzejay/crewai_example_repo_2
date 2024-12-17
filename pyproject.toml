@@ -5,7 +5,7 @@ description = "crewai-example-repo-2 using crewAI"
 authors = [{ name = "Your Name", email = "you@example.com" }]
 requires-python = ">=3.10,<=3.13"
 dependencies = [
-    "crewai[tools]>=0.83.0,<1.0.0",
+    "crewai[tools]>=0.86.0,<1.0.0",
 ]
 
 [project.scripts]
@@ -18,3 +18,6 @@ test = "crewai_example_repo_2.main:test"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+# [tool.uv.sources]
+# crewai = { path = "/Users/lorenzejay/Documents/Uplift Digital Solutions/clients/crewai-org/crewAI", editable = true }
