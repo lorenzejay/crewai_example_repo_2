@@ -13,8 +13,8 @@ def run():
     Run the crew.
     """
     inputs = {
-        # "question": "What is John's age and where does he live?"
-        "question": "What is the optimization problem formalized within the Agentic Workflow paper?"
+        "question": "Who is the user and what is their age?"
+        # "question": "What is the optimization problem formalized within the Agentic Workflow paper?"
     }
     CrewaiExampleRepo2Crew().crew().kickoff(inputs=inputs)
 
